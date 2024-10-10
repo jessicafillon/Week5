@@ -1,0 +1,180 @@
+# 1. Kilometer Converter
+
+def miles_to_km():
+    km = float(input("Enter distance, in kilometers: "))
+    miles = km * 0.6214
+    print(f'{km} kilometers converts to {miles:.2f} miles.')
+
+miles_to_km()
+
+# 2. Sales Tax Program Refactoring
+
+def total_purchase():
+    global purchase_amount
+    purchase_amount = float(input("Enter purchase amount: "))
+    print(f'\nSubtotal: ${purchase_amount:.2f}')
+    state_sales_tax()
+    county_sales_tax()
+    print(f'Total: ${purchase_amount + state_tax + county_tax}')
+
+def state_sales_tax():
+    global state_tax
+    state_tax = purchase_amount * 0.05
+    print(f'State Tax: ${state_tax:.2f}')
+
+def county_sales_tax():
+    global county_tax
+    county_tax = purchase_amount * 0.025
+    print(f'County Tax: ${county_tax:.2f}')
+
+total_purchase()
+
+
+# 3. How Much Insurance?
+
+def insurance_cost():
+    replacement_cost = float(input("Enter replacement cost: "))
+    insurance_min = replacement_cost * 0.8
+    print(f'The minimum amount of insurance cost is ${insurance_min:,.2f}')
+    
+insurance_cost()
+
+
+# 4. Automobile Costs
+
+def monthly_costs():
+    loan = float(input("Enter loan cost: "))
+    insurance = float(input("Enter insurance cost: "))
+    gas = float(input("Enter total gas expense: "))
+    oil = float(input("Enter total oil expense: "))
+    tires = float(input("Enter total tire cost: "))
+    maintenance = float(input("Enter maintenance cost: "))
+    total_monthly = loan + insurance + gas + oil + tires + maintenance
+    print(f'\nTotal Monthly Expense: ${total_monthly:,.2f}')
+    print(f'Total Annual Expense: ${(total_monthly * 12):,.2f}')
+
+monthly_costs()
+
+
+# 5. Property Tax
+
+def property_tax_cost():
+    property_val = float(input("Enter property value: "))
+    assessment_val = property_val * 0.6
+    property_tax = (assessment_val // 100) * 0.72
+    print(f'\nAssessment Value: ${assessment_val:,.2f}')
+    print(f'Property Tax: ${property_tax:,.2f}')
+
+property_tax_cost()
+
+
+# 6. Stadium Seating
+
+def total_income():
+    class_a_income()
+    class_b_income()
+    class_c_income()
+    print(f'\nTotal Income: ${(class_a + class_b + class_c):,.2f}')
+
+def class_a_income():
+    class_a_seats = float(input("Class A seats sold: "))
+    global class_a
+    class_a = class_a_seats * 20
+    
+def class_b_income():
+    class_b_seats = float(input("Class B seats sold: "))
+    global class_b
+    class_b = class_b_seats * 15
+
+def class_c_income():
+    class_c_seats = float(input("Class C seats sold: "))
+    global class_c
+    class_c = class_c_seats * 10
+
+total_income()
+
+
+# 7. Paint Job Estimator
+
+def paint_job():
+    global sqfeet
+    sqfeet = float(input("Enter total square feet to paint: "))
+    global gallon_price
+    gallon_price = float(input("Enter price per gallon of paint: "))
+    paint_gallons()
+    labor_hours()
+    paint_cost()
+    labor_cost()
+    print(f'\nTotal Cost: ${(cost_of_paint + cost_of_labor):,.2f}')
+
+def paint_gallons():
+    global gallons
+    gallons = sqfeet / 112
+    print(f'\nGallons Required: {gallons:.2f}')
+
+def labor_hours():
+    global hours
+    hours = gallons * 8
+    print(f'Hours of Labor Required: {hours:.2f}')
+    
+def paint_cost():
+    global cost_of_paint
+    cost_of_paint = gallons * gallon_price
+    print(f'\nCost of Paint: ${(cost_of_paint):,.2f}')
+    
+def labor_cost():
+    global cost_of_labor
+    cost_of_labor = hours * 35
+    print(f'Cost of Labor: ${(cost_of_labor):,.2f}')
+    
+paint_job()
+
+
+$ 8. Monthly Sales Tax
+
+def monthly_tax_report():
+    global total_sales
+    total_sales = float(input("Total Sales: "))
+    state_sales_tax()
+    county_sales_tax()
+    print(f'Total Sales Tax: ${(state_tax + county_tax):,.2f}')
+
+def state_sales_tax():
+    global state_tax
+    state_tax = total_sales * 0.05
+    print(f'\nState Sales Tax: ${state_tax:,.2f}')
+
+def county_sales_tax():
+    global county_tax
+    county_tax = total_sales * 0.025
+    print(f'County Sales Tax: ${county_tax:,.2f}')
+
+monthly_tax_report()
+
+
+# 9. Feet to Inches
+
+def feet_to_inches():
+    feet = float(input("Enter number of feet: "))
+    inches = feet * 12
+    print(f'{feet} feet = {inches:,} inches')
+
+feet_to_inches()
+
+
+# 10. Math Quiz
+
+import random
+
+def math_quiz():
+    num1 = random.randint(1, 1000)
+    num2 = random.randint(1, 1000)
+    print(f'  {num1}\n+ {num2}')
+    correct = num1 + num2
+    answer = int(input("> "))
+    if answer == correct:
+        print("Congratulations!")
+    else:
+        print(f'Incorrect! The answer is {correct}')
+
+math_quiz()
